@@ -19,7 +19,8 @@
   "dependencies": {
     "express": "~4.5.1",
     "logfmt": "~1.1.2",
-    "social-browser": "~0.1.0"
+    "social-browser": "~0.1.0",
+    "swig": "~1.4.1"
   },
   "engines": {
     "node": "0.10.x"

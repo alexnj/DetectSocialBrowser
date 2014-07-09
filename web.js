@@ -1,16 +1,18 @@
 
-var express = require("express");
-var logfmt = require("logfmt");
-var socialbrowser = require("social-browser");
-var app = express();
+var express = require("express"),
+    logfmt = require("logfmt"),
+    swig  = require("swig"),
+    socialbrowser = require("social-browser"),
+    app = express();
 
 app.use(logfmt.requestLogger());
 
 app.get('/', function(req, res) {
     var browser = socialbrowser.detect(req);
-    if (browser) {
-        res.send("<h1>You are using " + browser.name + "</h1>");
-    }
+    res.send(swig.renderFile('templates/main.html', { 
+        browser: browser,
+        req: req 
+    }));
 });
 
 var port = Number(process.env.PORT || 5000);
