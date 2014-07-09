@@ -10,17 +10,40 @@
                 padding: 1em; 
             }
             p {
+                margin-top: 200px;
                 font-size: 2em;
                 text-align: center;
             }
             code {
                 width: 100%:;
             }
+            .share {
+                
+            }
+            .circle {
+                background: red;
+                border-radius: 50%;
+                width: 200px;
+                height: 200px;
+                position: absolute;
+                top: -36px;
+                right: -46px;
+            }
+            .circle span {
+                position: absolute;
+                font-size: 103px;
+                left: 67px;
+                color: #fff;
+                top: 36px;
+            }
         </style>
     </head>
     <body>
-        {% if browser %}
-        <p>You are using {{name}}.</p>
+        {% if browser.name %}
+        <div class="share circle {{browser.major}}-{{browser.platform}}">
+            <span>⇡</span>
+        </div>
+        <p>You are using {{browser.name}}.</p>
         {% else %}
         <p>You are using some browser that I wasn't taught about.</p>
         <code>
