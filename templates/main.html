@@ -6,10 +6,6 @@
         
         <title>Social browser detection</title>
         <style type="text/css">
-            html {
-                overflow: hidden;
-                width:100%;
-            }
             body {
                 padding: 1em; 
             }
@@ -34,7 +30,7 @@
                 border-radius: 50%;
                 width: 200px;
                 height: 200px;
-                position: absolute;
+                position: fixed;
                 top: -45px;
                 right: -55px;
             }
@@ -48,10 +44,10 @@
         </style>
     </head>
     <body>
-        {% if browser.name %}
-        <div class="share circle {{browser.major}}-{{browser.platform}}">
+        <div class=" circle {{browser.major}}-{{browser.platform}}">
             <span>⇡</span>
         </div>
+        {% if browser.name %}
         <p>You are using {{browser.name}}.</p>
         {% else %}
         <p>You are using some browser that I wasn't taught about.</p>
